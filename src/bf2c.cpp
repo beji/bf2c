@@ -27,6 +27,7 @@ std::vector<uint8_t> read_stdin() {
 
 std::vector<Token> to_tokens(std::vector<uint8_t> characters) {
   std::vector<Token> tokens;
+  tokens.reserve(characters.size());
   for (const auto &c : characters) {
     switch (c) {
     case '>':
