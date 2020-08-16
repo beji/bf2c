@@ -6,11 +6,10 @@ project(virtcputhing
 
 set(CMAKE_CXX_STANDARD 17)
 
-string(APPEND CMAKE_C_FLAGS_DEBUG " -fsanitize=address -fsanitize=undefined -Wall")
 string(APPEND CMAKE_CXX_FLAGS_DEBUG " -fsanitize=address -fsanitize=undefined -Wall")
 string(APPEND CMAKE_LINKER_FLAGS_DEBUG " -fsanitize=address -fsanitize=undefined -Wall")
 
-string(APPEND CMAKE_CXX_FLAGS_RELEASE " -Wall")
+string(APPEND CMAKE_CXX_FLAGS_RELEASE " -Wall -pipe")
 string(APPEND CMAKE_LINKER_FLAGS_RELEASE "-Wall")
 
 add_executable(bf2c "${CMAKE_CURRENT_SOURCE_DIR}/src/bf2c.cpp")

@@ -7,10 +7,9 @@ project(virtcputhing
 set(CMAKE_CXX_STANDARD 11)
 
 string(APPEND CMAKE_C_FLAGS_DEBUG " -fsanitize=address -fsanitize=undefined -Wall")
-string(APPEND CMAKE_CXX_FLAGS_DEBUG " -fsanitize=address -fsanitize=undefined -Wall")
 string(APPEND CMAKE_LINKER_FLAGS_DEBUG " -fsanitize=address -fsanitize=undefined -Wall")
 
-string(APPEND CMAKE_CXX_FLAGS_RELEASE " -Wall")
+string(APPEND CMAKE_C_FLAGS_RELEASE " -Wall -pipe")
 string(APPEND CMAKE_LINKER_FLAGS_RELEASE "-Wall")
 
 add_executable(bf "${CMAKE_CURRENT_SOURCE_DIR}/bf.c")
