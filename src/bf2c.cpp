@@ -61,6 +61,8 @@ std::vector<Token> to_tokens(std::vector<uint8_t> characters) {
 
 std::vector<std::string> tokens2c(std::vector<Token> tokens) {
   std::vector<std::string> code;
+  // The fixed "header" is 7 lines + one line of finishing main
+  code.reserve(tokens.size() + 8);
 
   code.push_back("#include <stdint.h>");
   code.push_back("#include <stdlib.h>");
